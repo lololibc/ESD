@@ -8,6 +8,7 @@ public class Funcionario {
     public Funcionario(String nome) {
         this.nome = nome;
         this.salarioBase = Salario.BASE.getValor();
+        this.salario = this.salarioBase;
     }
 
     public String getNome() {
