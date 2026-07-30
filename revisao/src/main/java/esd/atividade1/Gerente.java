@@ -1,4 +1,4 @@
-package esd;
+package esd.atividade1;
 
 public class Gerente {
     protected String nome;

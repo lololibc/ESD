@@ -1,4 +1,4 @@
-package esd;
+package esd.atividade1;
 
 public enum Salario {
     BASE(1000);

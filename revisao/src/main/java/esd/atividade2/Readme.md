@@ -5,7 +5,7 @@ classDiagram
     
     Imovel "0..*" <-- "1"  Sistema
     Contratos "0..*" <-- "1" Sistema
-    Contratos "0..*" -- "1" Imoveis
+    Contratos "0..*" -- "1" Imovel
     Contratos "0..*" -- "1" Cliente
     
     class Sistema {
