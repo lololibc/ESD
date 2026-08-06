@@ -1,5 +1,7 @@
 package esd;
 
+import java.util.Arrays;
+
 public class Agenda {
     private Contato[] contatos;
     private int tamanho;
@@ -13,6 +15,8 @@ public class Agenda {
             if (verificar(contato)) {
                 contatos[tamanho] = contato;
                 tamanho++;
+            }else{
+                IO.println("Dados informados já estão em uso");
             }
         } else {
             IO.println("Agenda está cheia!");
@@ -20,8 +24,11 @@ public class Agenda {
     }
 
     public boolean verificar(Contato contato){
-        for (Contato c : contatos) {
-            if (c.getNome().equals(contato.getNome()) || c.getTelefone().equals(contato.getTelefone())) {
+        if (tamanho == 0) {
+            return true;
+        }
+        for (int i = 0; i < tamanho; i++) {
+            if (contatos[i].getNome().equals(contato.getNome()) || contatos[i].getTelefone().equals(contato.getTelefone())) {
                 return false;
             }
         }
@@ -60,11 +67,30 @@ public class Agenda {
             if (contatos[i].getNome().equals(contato.getNome()) || contatos[i].getTelefone().equals(contato.getTelefone())) {
                 contato.setNome(n);
                 contato.setTelefone(t);
+                return;
             }
         }
         System.out.println("Contato não encontrado");
     }
 
+    public String listar() {
+        return "Agenda{" +
+                "contatos=" + Arrays.toString(contatos) +
+                '}';
+    }
 
+    public void manipulacaoEmLote(Contato[] lista){
+        for (Contato c : lista){adicionar(c);}
+    }
 
+    public void buscarPrefixo(String busca){
+        for (Contato contato : contatos) {
+            if (contato != null){
+                if (contato.getNome().startsWith(busca)) {
+                    IO.println(contato.toString());
+                }
+            }
+        }
+
+    }
 }
