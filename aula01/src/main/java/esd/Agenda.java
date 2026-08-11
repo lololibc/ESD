@@ -11,15 +11,14 @@ public class Agenda {
     }
 
     public void adicionar(Contato contato){
-        if(tamanho < contatos.length) {
-            if (verificar(contato)) {
-                contatos[tamanho] = contato;
-                tamanho++;
-            }else{
-                IO.println("Dados informados já estão em uso");
-            }
-        } else {
-            IO.println("Agenda está cheia!");
+        if (tamanho == contatos.length) {
+            expandir();
+        }
+        if (verificar(contato)) {
+            contatos[tamanho] = contato;
+            tamanho++;
+        }else{
+            IO.println("Dados informados já estão em uso");
         }
     }
 
@@ -92,5 +91,13 @@ public class Agenda {
             }
         }
 
+    }
+
+    private void expandir() {
+        Contato[] novo = new Contato[contatos.length * 2];
+        for (int i = 0; i < contatos.length; i++) {
+            novo[i] = contatos[i];
+        }
+        contatos = novo;
     }
 }
