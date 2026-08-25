@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="364f773f-a7fd-4f3a-90d0-c6228ef444d2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/settings.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/src/main/java/esd/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atividade02/src/main/java/esd/Vetor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

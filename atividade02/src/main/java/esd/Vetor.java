@@ -1,0 +1,211 @@
+package esd;
+
+public class Vetor<T extends Comparable<T>> {
+
+    private T[] elementos;
+    private int tamanho;
+    private int comparacoes;
+
+    @SuppressWarnings("unchecked")
+    public Vetor(int quantidade){
+        elementos = (T[])  new Comparable[quantidade];
+        tamanho = 0;
+    }
+
+    public void inserir(T elemento) {
+        if (tamanho == elementos.length) {
+            expandir();
+        }
+        elementos[tamanho] = elemento;
+        tamanho++;
+    }
+
+    public void inserir(int indice, T elemento) {
+
+        if (tamanho == elementos.length) {
+            expandir();
+        }
+
+        if (indice < 0 || indice > elementos.length) {
+            System.out.println("Posição Inválida");
+            return;
+        }
+
+        // Desloca os elementos para a direita
+        for (int i = tamanho ; i > indice; i-- ) {
+            elementos[i] = elementos[i-1];
+        }
+        elementos[indice] = elemento;
+        tamanho++;
+    }
+
+
+    @SuppressWarnings("unchecked")
+    private void expandir() {
+        T[] novo = (T[]) new Comparable[elementos.length * 2];
+        for (int i = 0; i < elementos.length; i++) {
+            novo[i] = elementos[i];
+        }
+        elementos = novo;
+    }
+
+    @SuppressWarnings("unchecked")
+    private void reduzir() {
+
+        if (elementos.length <= 1) {
+            return;
+        }
+
+        if (tamanho <= elementos.length / 4) {
+
+            int novaCapacidade = elementos.length / 2;
+            // Nunca permitir capacidade menor que 1
+            if (novaCapacidade < 1) {
+                novaCapacidade = 1;
+            }
+
+            // A capacidade não pode ficar menor que o tamanho
+            if (novaCapacidade < tamanho) {
+                novaCapacidade = tamanho;
+            }
+
+            T[] novo = (T[]) new Comparable[novaCapacidade];
+
+            for (int i = 0; i < tamanho; i++) {
+                novo[i] = elementos[i];
+            }
+
+            elementos = novo;
+        }
+    }
+
+    public int getLength() {
+        return elementos.length;
+    }
+
+    public void remover(int indice) {
+        if (indice < 0 || indice >= tamanho) {
+            System.out.println("Indice Inválido");
+            return;
+        }
+
+        // Desloca os elementos para a esquerda
+        for (int i = indice; i < tamanho; i++) {
+            elementos[i] = elementos[i+1];
+        }
+        elementos[tamanho-1] = null;
+        tamanho--;
+        reduzir();
+    }
+
+    public boolean remover(T elemento) {
+
+        int indice = localizar(elemento);
+        if (indice == -1) {
+            return false;
+        }
+        remover(indice);
+        return true;
+    }
+
+    public boolean contem(T elemento) {
+        return localizar(elemento) != -1;
+    }
+
+
+
+    public void inserirOrdenadov2(T valor) {
+
+        if (localizar(valor) != -1) {
+            System.out.println("Valor " + valor + " já existe na lista.");
+            return;
+        }
+        if (tamanho == 0) {
+            inserir(tamanho,valor);
+            return;
+        }
+        for (int i = 0; i < tamanho; i++) {
+            if ((Integer)valor < (Integer) elementos[i]) {
+                inserir(i,valor);
+                break;
+            }
+        }
+    }
+
+
+    public void inserirOrdenado(T valor) {
+        if (localizar(valor) != -1) {
+            System.out.println("Valor " + valor + " já existe na lista.");
+            return;
+        }
+        if (tamanho == elementos.length) {
+            expandir();
+        }
+        int i;
+        for (i = tamanho - 1; i >= 0; i--) {
+            Integer atual = (Integer) elementos[i];
+            if (elementos[i].compareTo(valor) > 0) {
+                elementos[i + 1] = elementos[i];
+                 // desloca para a direita
+            } else {
+                break;
+            }
+        }
+        elementos[i + 1] = valor;
+        tamanho++;
+    }
+
+    public int obterTamanho() {
+        return tamanho;
+    }
+
+    public int localizar(T elemento) {
+        for (int i = 0; i < tamanho; i++) {
+            if (elementos[i] != null && elementos[i] == elemento) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    public void imprimir() {
+        System.out.print("[");
+        for (int i = 0; i < tamanho ; i++) {
+            System.out.print(elementos[i]);
+            if (i < tamanho -1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
+    public T ler(int indice) {
+        return elementos[indice];
+    }
+
+    public int buscarBinaria(int alvo) {
+
+        int inicio = 0;
+        int fim = obterTamanho();
+
+        while (inicio <= fim) {
+
+            int meio = (inicio + fim)/2;
+            comparacoes++;
+            if ((Integer)ler(meio) == alvo) {
+                return meio;
+            }  else if (meio > alvo) {
+                fim = meio -1;
+            } else {
+                inicio = meio + 1;
+            }
+
+        }
+        return -1;
+    }
+    public void zeraComparacoes(){comparacoes = 0;}
+
+    public int getComparacoes() {
+        return comparacoes;
+    }
+}
