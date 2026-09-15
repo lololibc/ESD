@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="364f773f-a7fd-4f3a-90d0-c6228ef444d2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade02/src/main/java/esd/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/atividade02/src/main/java/esd/Vetor.java" beforeDir="false" />
-    </list>
+    <list default="true" id="364f773f-a7fd-4f3a-90d0-c6228ef444d2" name="Changes" comment="atividade 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,9 +87,22 @@
       <option name="presentableId" value="Default" />
       <updated>1785447525743</updated>
     </task>
+    <task id="LOCAL-00001" summary="atividade 2">
+      <option name="closed" value="true" />
+      <created>1789438293769</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1789438293770</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="atividade 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="atividade 2" />
   </component>
 </project>
