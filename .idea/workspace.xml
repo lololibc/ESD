@@ -59,12 +59,13 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/louis/Documents/ESD/atividade02/src/main/java/esd",
+    "last_opened_file_path": "/home/aluno/Documentos/ESD",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -76,6 +77,7 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.138" />
       </set>
     </attachedChunks>
   </component>
@@ -86,6 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1785447525743</updated>
+      <workItem from="1789681894397" duration="1811000" />
     </task>
     <task id="LOCAL-00001" summary="atividade 2">
       <option name="closed" value="true" />
