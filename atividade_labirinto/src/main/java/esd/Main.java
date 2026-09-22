@@ -5,5 +5,10 @@ package esd;
 public class Main {
     static void main() {
 
+        Labirinto labirinto = new Labirinto();
+        boolean achou = labirinto.resolver();
+        System.out.println(achou ? "Caminho encontrado!" : "Sem solução.");
+        labirinto.imprimir();
+
     }
 }
