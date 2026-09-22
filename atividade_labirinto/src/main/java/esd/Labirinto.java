@@ -68,14 +68,47 @@ public class Labirinto {
         }
     }
 
+    private boolean podeAndar(int l, int c) {
+        if (l < 0 || l >= mapa.length || c < 0 || c >= mapa[0].length) return false;
+        return mapa[l][c] == ' ' || mapa[l][c] == 'T'; // só casa livre ou a saída
+    }
 
+    public boolean resolver() {
+        int[][] direcoes = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
+        Stack<int[]> pilha = new Stack<>();   // ajustar ao seu Stack.java
+        pilha.push(new int[]{linhaInicial, colunaInicial});
 
+        while (!pilha.isEmpty()) {
+            int[] atual = pilha.peek();
 
+            if (atual[0] == linhaFinal && atual[1] == colunaFinal) {
+                return true;
+            }
 
+            boolean andou = false;
+            for (int[] d : direcoes) {
+                int l = atual[0] + d[0];
+                int c = atual[1] + d[1];
+                if (podeAndar(l, c)) {
+                    if (mapa[l][c] == ' ') mapa[l][c] = '.'; // marca como visitada (sem apagar o 'T')
+                    pilha.push(new int[]{l, c});
+                    andou = true;
+                    break;
+                }
+            }
+
+            if (!andou) {
+                int[] beco = pilha.pop();
+                if (mapa[beco[0]][beco[1]] == '.') mapa[beco[0]][beco[1]] = 'x'; // beco sem saída
+            }
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         Labirinto labirinto = new Labirinto();
+        boolean achou = labirinto.resolver();
+        System.out.println(achou ? "Caminho encontrado!" : "Sem solução.");
         labirinto.imprimir();
     }
-}
