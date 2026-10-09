@@ -1,6 +1,6 @@
 package esd;
 
-public class Processo {
+public class Processo implements Comparable<Processo>{
     private String nome;
     private int instrucoesRestantes;
     private int tempoChegada;
@@ -10,6 +10,7 @@ public class Processo {
         this.nome = nome;
         this.instrucoesRestantes = instrucoesRestantes;
         this.tempoChegada = tempoChegada;
+        this.status = Status.PRONTO;
     }
 
     public String getNome() {
@@ -34,5 +35,14 @@ public class Processo {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public void setInstrucoesRestantes(int instrucoesRestantes) {
+        this.instrucoesRestantes = instrucoesRestantes;
+    }
+
+    @Override
+    public int compareTo(Processo o) {
+        return 0;
     }
 }
